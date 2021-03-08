@@ -1,0 +1,72 @@
+//
+//  ViewController.swift
+//  Tip Calculator.
+//
+//  Created by Joe on 3/7/21.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    
+    
+    
+    
+    
+    
+    
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    
+    @IBOutlet weak var tipAmountLabel: UILabel!
+    
+    @IBOutlet weak var tipAmount2Label: UILabel!
+    @IBOutlet weak var tipAmount3Label: UILabel!
+    @IBOutlet weak var billAmountTextField: UITextField!
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+    
+    
+    
+    
+    @IBAction func calculatetip(_ sender: Any) {
+        
+        let billAmount = Double(self.billAmountTextField.text ?? "") ?? 0
+        let tipPercentage = 0.10
+        let tipPercentage2 = 0.15
+        let tipPercentage3 = 0.20
+        
+        let tipAmount2 = ( billAmount * tipPercentage2 )
+        self.tipAmount2Label.text = "$\(tipAmount2)"
+        
+        let tipAmount3 = ( billAmount * tipPercentage3)
+        self.tipAmount3Label.text = "$\(tipAmount3)"
+        
+        let tipAmount = ( billAmount * tipPercentage )
+        self.tipAmountLabel.text = "$\(tipAmount)"
+        
+        let total = (billAmount + tipAmount)
+        self.totalAmountLabel.text = "$\(total)"
+        
+        
+    }
+    
+    
+    
+
+}
+
